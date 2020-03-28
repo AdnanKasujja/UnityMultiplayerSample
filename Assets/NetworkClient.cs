@@ -170,7 +170,7 @@ public class NetworkClient : MonoBehaviour
         Debug.Log(p.ToString());
         GameObject temp = Instantiate(cube, p.position, p.rotation);
         temp.GetComponent<NetworkCharacter>().SetNetworkID(p.id);
-        temp.GetComponent<NetworkCharacter>().SetControllable(p.id == myID);
+        temp.GetComponent<NetworkCharacter>().Setmoveable(p.id == myID);
         temp.GetComponent<Renderer>().material.color = new Color(p.color.R, p.color.G, p.color.B, 1.0f);
         players.Add(p.id, temp);
     }
